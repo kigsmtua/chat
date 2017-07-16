@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kigsmtua/messenger-clone.svg?branch=master)](https://travis-ci.org/kigsmtua/messenger-clone)
+
 # Messenger Clone
 Live video,chat,audio messaging system borrowing inspirations from facebook messenger
 
