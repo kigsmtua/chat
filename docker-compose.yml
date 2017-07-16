@@ -10,6 +10,9 @@ services:
   webfrontend:
      build:
        context: ./webfrontend
+     volumes:
+       - ./:/usr/src/app
+     command: npm start
      ports:
        - 4200:4200
   mobileapp:
