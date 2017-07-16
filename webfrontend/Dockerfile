@@ -1,7 +1,5 @@
 FROM node:6.10
 
-RUN npm install -g @angular/cli
-
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
@@ -10,6 +8,4 @@ COPY . /usr/src/app
 
 RUN npm install
 
-RUN ng build
-
-CMD ng serve
+CMD npm start

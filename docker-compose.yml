@@ -4,9 +4,9 @@ services:
       build:
         context: ./backend
       ports:
-        - 3000:3000
+        - 8000:8000
       environment:
-        - DJANGO_SETTINGS_MODULE=smyllo.docker-settings
+        - DJANGO_SETTINGS_MODULE=backend.settings
   webfrontend:
      build:
        context: ./webfrontend

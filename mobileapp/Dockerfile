@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-npm install -g ionic cordova
+RUN npm install -g ionic cordova
+
+RUN npm install
 
 CMD ionic serve
