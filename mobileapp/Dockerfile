@@ -1,15 +1,11 @@
 FROM node:6.10
 
-RUN npm install -g @angular/cli
-
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-RUN npm install
+npm install -g ionic cordova
 
-RUN ng build
-
-CMD ng serve
+CMD ionic serve

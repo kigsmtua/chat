@@ -1,0 +1,19 @@
+version: '2'
+services:
+  backend:
+      build:
+        context: ./backend
+      ports:
+        - 3000:3000
+      environment:
+        - DJANGO_SETTINGS_MODULE=smyllo.docker-settings
+  webfrontend:
+     build:
+       context: ./webfrontend
+     ports:
+       - 4200:4200
+  mobileapp:
+     build:
+       context: ./mobileapp
+     ports:
+       - 8100:8100
