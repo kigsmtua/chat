@@ -5,8 +5,30 @@ services:
         context: ./backend
       ports:
         - 8000:8000
+      links:
+          - redis
+          - db
+      depends_on:
+          - redis
+          - db
       environment:
         - DJANGO_SETTINGS_MODULE=backend.settings
+        
+  # Redis image for django channels
+  redis:
+        image: redis:latest
+
+  # Application database
+  db:
+      image: mysql:latest
+      environment:
+        - MYSQL_RANDOM_ROOT_PASSWORD=yes
+        - MYSQL_DATABASE=chat
+        - MYSQL_USER=chat
+        - MYSQL_PASSWORD=!23qweASD
+      ports:
+        - 3340:3306
+
   webfrontend:
      build:
        context: ./webfrontend
@@ -15,6 +37,7 @@ services:
      command: npm start
      ports:
        - 4200:4200
+
   mobileapp:
      build:
        context: ./mobileapp
