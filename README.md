@@ -15,4 +15,4 @@ Live video,chat,audio messaging system borrowing inspirations from facebook mess
 1. Clone this repository
 2. Install Docker
 3. Run docker-compose up --build to build and pull the containers (will take awhile)
-4. On a separate terminal, you can run commands as follows : docker exec -it smyllo bash -c <command>
+4. On a separate terminal, you can run commands as follows : docker exec -it app bash -c <command>
