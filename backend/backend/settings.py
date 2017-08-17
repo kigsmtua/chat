@@ -38,7 +38,8 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-    'chat'
+    'chat',
+    'profiles'
 ]
 
 THIRD_PARTY_APPS = [
