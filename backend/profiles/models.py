@@ -1,17 +1,21 @@
-from django.db import models
+"""User definitions."""
+from random import randint
+
 from django.contrib.auth.models import User
+from django.db import models
 
 
+# @TODO move to an s3 bucket
 def upload_location(instance, filename):
+    """Specify where files in our default root are uploaded."""
     new_id = randint(0, 1000)
     return "%s/%s" % (new_id, filename)
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,    related_name="profile")
-    unique_name = models.CharField(max_length=30, blank=True)
-    bio = models.TextField(max_length=500, blank=True)
-    what_makes_you_happy = models.TextField(max_length=500, blank=True)
+    """Describe a user in our system."""
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE,    related_name="profile") # noqa
     profile_pic = models.ImageField(
         upload_to=upload_location,
         null=True,

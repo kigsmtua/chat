@@ -1,4 +1,4 @@
 [flake8]
 exclude = */migrations/*,*/settings/*,apps.py
 max-complexity = 15
-max-line-length = 100
+max-line-length = 80
