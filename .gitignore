@@ -4,3 +4,4 @@ lib
 pip-selfcheck.json
 .Python
 npm-debug.log
+__pycache__
