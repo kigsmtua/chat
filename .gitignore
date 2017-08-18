@@ -1,6 +1,7 @@
 bin
 include
 lib
+media
 pip-selfcheck.json
 .Python
 npm-debug.log
