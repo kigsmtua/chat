@@ -1,7 +1,7 @@
 """Serializers for the profile module."""
 from django.contrib.auth.models import User
 
-from profiles.model import Profile
+from profiles.models import Profile
 from rest_framework.serializers import ModelSerializer
 
 
