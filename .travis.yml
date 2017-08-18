@@ -5,7 +5,7 @@ python:
   - "3.6"
 services: mysql
 env:
-    - DJANGO=1.11.3 DJANGO_SETTINGS_MODULE=backend.backend.ci
+    - DJANGO=1.11.3 DJANGO_SETTINGS_MODULE=backend.ci
 install:
     - cd backend
     - pip install flake8==3.2.0
