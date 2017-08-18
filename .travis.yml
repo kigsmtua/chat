@@ -4,10 +4,17 @@ language: python
 python:
   - "3.6"
 services: mysql
+env:
+    - DJANGO=1.11.3 DJANGO_SETTINGS_MODULE=backend.ci
 install:
     - cd backend
     - pip install flake8==3.2.0
     - pip install -r requirements.txt
+
+before_script:
+    - mysql -e 'create database test;'
+    - python manage.py makemigrations
+    - python manage.py migrate
 
 script:
     - python manage.py test
