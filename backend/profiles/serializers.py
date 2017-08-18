@@ -5,7 +5,7 @@ from profiles.models import Profile
 from rest_framework.serializers import ModelSerializer
 
 
-def ProfileSerializer(ModelSerializer):
+class ProfileSerializer(ModelSerializer):
     """Profile details."""
     class Meta:
         model = Profile
