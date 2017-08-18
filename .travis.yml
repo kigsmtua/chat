@@ -13,7 +13,8 @@ install:
 
 before_script:
     - mysql -e 'create database test;'
-    - python manage.py syncdb --noinput
+    - python manage.py makemigrations
+    - python manage.py migrate
 
 script:
     - python manage.py test
