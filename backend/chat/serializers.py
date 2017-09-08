@@ -14,7 +14,6 @@ class ThreadCreateSerializer(ModelSerializer):
         model = Thread
         fields = [
             'text'
-            'profile'
         ]
 
     def create(self, validated_data):
