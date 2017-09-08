@@ -1,3 +1,8 @@
-from django.shortcuts import render
+"""Chat application views."""
+from rest_framework.generics import CreateAPIView
 
-# Create your views here.
+
+class MessageCreateView(CreateAPIView):
+    """Create a message here."""
+
+    pass
