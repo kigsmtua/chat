@@ -68,7 +68,9 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +88,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 redis_host = os.environ.get('REDIS_HOST', 'localhost')
 
-# Use the default implementation layer
+# asgi_redis
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "asgi_redis.RedisChannelLayer",
