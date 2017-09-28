@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^accounts/logout/$', logout),
     url(r'^admin/', admin.site.urls),
     url(r'^profile/', include("profiles.urls", namespace='profiles')),
-    url(r'^char/', include("chat.urls", namespace='chat')),
+    url(r'^chat/', include("chat.urls", namespace='chat')),
 ]

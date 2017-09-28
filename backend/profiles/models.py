@@ -24,3 +24,6 @@ class Profile(models.Model):
         height_field="height_field")
     height_field = models.IntegerField(default=0, blank=True)
     width_field = models.IntegerField(default=0, blank=True)
+
+    def __str__(self):
+        return self.user.username

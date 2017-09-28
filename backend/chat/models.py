@@ -15,7 +15,8 @@ class Thread(models.Model):
 class Messages(models.Model):
     """Defines a single chat message."""
 
-    author = models.ForeignKey(Profile, related_name="receiver")
+    author = models.ForeignKey(Profile, related_name="sender")
+    receiver = models.ForeignKey(Profile, related_name="receiver")
     text = models.TextField()
     isRead = models.BooleanField(default=0)
     thread = models.ForeignKey(Thread, related_name="thread")

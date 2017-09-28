@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from chat.models import Messages
-from chat.serializers import ThreadCreateSerializer
+from chat.serializers import MessageCreateSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
 
@@ -11,9 +11,13 @@ from rest_framework.permissions import AllowAny
 class MessageCreateView(CreateAPIView):
     """Create a message here."""
 
-    serializer_class = ThreadCreateSerializer
+    serializer_class = MessageCreateSerializer
     queryset = Messages.objects.all()
     permission_classes = [AllowAny]
+
+    def get_serializer_context(self):
+        """Pass request object to serializer."""
+        return {'request': self.request}
 
 
 @login_required
