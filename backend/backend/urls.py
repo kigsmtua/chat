@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
+from rest_framework_jwt.views import obtain_jwt_token
+
 from chat.views import index
 
 urlpatterns = [
@@ -23,6 +25,7 @@ urlpatterns = [
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^admin/', admin.site.urls),
+    url(r'^auth/', obtain_jwt_token),
     url(r'^profile/', include("profiles.urls", namespace='profiles')),
     url(r'^chat/', include("chat.urls", namespace='chat')),
 ]
