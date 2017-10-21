@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^admin/', admin.site.urls),
-    url(r'^auth/', obtain_jwt_token),
+    url(r'^auth', obtain_jwt_token),
     url(r'^profile/', include("profiles.urls", namespace='profiles')),
     url(r'^chat/', include("chat.urls", namespace='chat')),
 ]

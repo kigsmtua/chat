@@ -25,6 +25,8 @@ SECRET_KEY = 'ybm%7nr$nrqa7!x=$tb@+621y2am+*we^cl+v$&um()2km+i7-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+APPEND_SLASH = False
+
 ALLOWED_HOSTS = []
 
 
