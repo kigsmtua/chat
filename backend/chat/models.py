@@ -7,7 +7,7 @@ from profiles.models import Profile
 class Thread(models.Model):
     """A collection of messages defined in a thread."""
 
-    name = models.TextField()
+    name = models.CharField(max_length=255, unique=True)
     createdAt = models.DateTimeField(auto_now=False, auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True, auto_now_add=False)
 
