@@ -15,7 +15,7 @@ def upload_location(instance, filename):
 class Profile(models.Model):
     """Describe a user in our system."""
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE,    related_name="profile") # noqa
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile") # noqa
     profile_pic = models.ImageField(
         upload_to=upload_location,
         null=True,

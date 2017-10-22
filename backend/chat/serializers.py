@@ -2,6 +2,7 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
 from chat.models import Messages, Thread
+from profiles.models import Profile
 
 
 class MessageCreateSerializer(ModelSerializer):
@@ -15,7 +16,6 @@ class MessageCreateSerializer(ModelSerializer):
         fields = [
             'text',
             'receiver',
-            'sender'
         ]
 
     # @TODO add support for group chat
@@ -26,19 +26,13 @@ class MessageCreateSerializer(ModelSerializer):
         an existing model instance, or create a new model instance.
         """
         receiver = validated_data['receiver']
-        sender = self.request.user
-        thread_name = receiver.username + sender.username
+        message = validated_data['text']
+        logged_in_user = self.context['request'].user
+        sender = Profile.objects.get(user=logged_in_user)
+        thread_name = receiver.user.username + logged_in_user.username
         try:
             thread = Thread.objects.get(name=thread_name)
-        except Exception:
-            thread = Thread.objects.create(name=thread_name)
-        message = Messages.objects.create(author=sender, thread=thread **validated_data) # noqa
-        return message
-
-    def get_sender(self, obj):
-        """Get sender from request."""
-        try:
-            sender = obj.user
         except:
-            sender = None
-        return sender
+            thread = Thread.objects.create(name=thread_name)
+        message = Messages.objects.create(sender=sender, receiver=receiver, thread=thread, text=message) # noqa
+        return message
