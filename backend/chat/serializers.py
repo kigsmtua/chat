@@ -1,7 +1,7 @@
 """Lets define what a message looks like."""
-from random import randint
-from chat.models import Messages, Thread
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
+
+from chat.models import Messages, Thread
 
 
 class MessageCreateSerializer(ModelSerializer):
