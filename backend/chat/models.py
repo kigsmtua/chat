@@ -24,7 +24,6 @@ class Thread(models.Model):
             'message': message}
 
         self.name.send(
-            # This just means we can
             {"message": json.dumps(msg)}
         )
 
