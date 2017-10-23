@@ -1,33 +1,36 @@
 version: '2'
 services:
-  backend:
-      build:
-        context: ./backend
-      ports:
-        - 8000:8000
-      links:
-          - redis
-          - db
-      depends_on:
-          - redis
-          - db
-      environment:
-        - DJANGO_SETTINGS_MODULE=backend.settings
-        
-  # Redis image for django channels
   redis:
-        image: redis:latest
+    image: redis:latest
 
-  # Application database
   db:
-      image: mysql:latest
-      environment:
-        - MYSQL_RANDOM_ROOT_PASSWORD=yes
-        - MYSQL_DATABASE=chat
-        - MYSQL_USER=chat
-        - MYSQL_PASSWORD=!23qweASD
-      ports:
-        - 3340:3306
+    image: mysql:latest
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=chat
+      - MYSQL_USER=chat
+      - MYSQL_PASSWORD=!23qweASD
+    ports:
+      - 3340:3306
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - 8000:8000
+    links:
+      - redis
+      - db
+    depends_on:
+      - redis
+      - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+      - DATABASE_HOST=db
+      - DATABASE_USERNAME=chat
+      - DATABASE_NAME=chat
+      - DATABASE_PORT=3306
+      - DATABASE_PASSWORD=!23qweASD
 
   webfrontend:
      build:
