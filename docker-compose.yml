@@ -36,7 +36,7 @@ services:
        - ./:/usr/src/app
      command: npm start
      ports:
-       - 4200:4200
+       - 80:4200
 
   mobileapp:
      build:
