@@ -4,6 +4,8 @@ import json
 from channels import Channel
 from channels.auth import channel_session_user, channel_session_user_from_http
 
+from .models import Thread, Messages
+
 
 @channel_session_user_from_http
 def ws_connect(message):
