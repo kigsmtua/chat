@@ -7,7 +7,7 @@ Live video,chat,audio messaging system borrowing inspirations from facebook mess
 1. Django 1.11.3
 2. Django rest framework
 3. Django channels
-4. Angular 4
+4. Angular 5
 5. Ionic 2
 
 # Running The project
