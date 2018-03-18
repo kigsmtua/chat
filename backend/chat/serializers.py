@@ -32,7 +32,7 @@ class MessageCreateSerializer(ModelSerializer):
         thread_name = receiver.user.username + logged_in_user.username
         try:
             thread = Thread.objects.get(name=thread_name)
-        except:
+        except BaseException as e:
             thread = Thread.objects.create(name=thread_name)
         message = Messages.objects.create(sender=sender, receiver=receiver, thread=thread, text=message) # noqa
         return message
