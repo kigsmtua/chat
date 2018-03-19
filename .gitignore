@@ -7,3 +7,5 @@ pip-selfcheck.json
 npm-debug.log
 __pycache__
 *.pyc
+.vscode
+.idea
