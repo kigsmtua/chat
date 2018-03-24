@@ -18,6 +18,8 @@ services:
     links:
       - redis
       - db
+    volumes:
+      - ./backend:/code
     depends_on:
       - redis
       - db
