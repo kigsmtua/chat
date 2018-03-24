@@ -10,8 +10,6 @@ services:
       - MYSQL_DATABASE=chat
       - MYSQL_USER=chat
       - MYSQL_PASSWORD=!23qweASD
-    ports:
-      - 3340:3306
   backend:
     build:
       context: ./backend
@@ -30,7 +28,7 @@ services:
       - DATABASE_HOST=db
       - DATABASE_USERNAME=chat
       - DATABASE_NAME=chat
-      - DATABASE_PORT=3340
+      - DATABASE_PORT=3306
       - DATABASE_PASSWORD=!23qweASD
 
   webfrontend:
