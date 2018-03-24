@@ -10,6 +10,8 @@ services:
       - MYSQL_DATABASE=chat
       - MYSQL_USER=chat
       - MYSQL_PASSWORD=!23qweASD
+    ports:
+      - 3340:3306
   backend:
     build:
       context: ./backend
@@ -28,14 +30,14 @@ services:
       - DATABASE_HOST=db
       - DATABASE_USERNAME=chat
       - DATABASE_NAME=chat
-      - DATABASE_PORT=3306
+      - DATABASE_PORT=3340
       - DATABASE_PASSWORD=!23qweASD
 
   webfrontend:
      build:
        context: ./webfrontend
      volumes:
-       - ./:/usr/src/app
+       - ./webfrontend:/usr/src/app
      command: npm start
      ports:
        - 80:4200
@@ -43,5 +45,7 @@ services:
   mobileapp:
      build:
        context: ./mobileapp
+     volumes:
+       - ./mobileapp:/usr/src/app
      ports:
        - 8100:8100
