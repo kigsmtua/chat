@@ -27,7 +27,7 @@ DEBUG = True
 
 APPEND_SLASH = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 DJANGO_APPS = [
@@ -101,7 +101,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 database_host = os.environ.get('DATABASE_HOST', 'localhost')
@@ -109,11 +108,12 @@ database_username = os.environ.get('DATABASE_USERNAME', 'root')
 database_name = os.environ.get('DATABASE_NAME', 'messenger_clone')
 database_port = os.environ.get('DATABASE_PORT', '3306')
 database_password = os.environ.get('DATABASE_PASSWORD', '')
+database_engine = os.environ.get('DATABASE_ENGINE')
 
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': database_engine,
         'NAME': database_name,
         'USER': database_username,
         'PASSWORD': database_password,
