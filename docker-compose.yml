@@ -30,6 +30,7 @@ services:
       - DATABASE_NAME=chat
       - DATABASE_PORT=3306
       - DATABASE_PASSWORD=!23qweASD
+      - DATABASE_ENGINE=django.db.backends.mysql
 
   webfrontend:
      build:
