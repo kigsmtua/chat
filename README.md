@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/kigsmtua/chat.svg?branch=master)](https://travis-ci.org/kigsmtua/chat)
 
-# Messenger Clone
+# Chat
 Live video,chat,audio messaging system borrowing inspirations from facebook messenger
 
 Demo application found at https://live-chat-clone.herokuapp.com
