@@ -5,11 +5,14 @@ services:
 
   db:
     image: mysql:latest
+    command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=r00t
       - MYSQL_DATABASE=chat
       - MYSQL_USER=chat
       - MYSQL_PASSWORD=!23qweASD
+    ports:
+      - 3340:3306
   backend:
     build:
       context: ./backend
