@@ -31,10 +31,10 @@ class Thread(models.Model):
 class Messages(models.Model):
     """Defines a single chat message."""
 
-    sender = models.ForeignKey(Profile, related_name="sender")
-    receiver = models.ForeignKey(Profile, related_name="receiver")
+    sender = models.ForeignKey(Profile, related_name="sender", on_delete=models.CASCADE)
+    receiver = models.ForeignKey(Profile, related_name="receiver", on_delete=models.CASCADE)
     text = models.TextField()
     isRead = models.BooleanField(default=0)
-    thread = models.ForeignKey(Thread, related_name="thread")
+    thread = models.ForeignKey(Thread, related_name="thread", on_delete=models.CASCADE)
     sentAt = models.DateTimeField(auto_now=False, auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True, auto_now_add=False)
