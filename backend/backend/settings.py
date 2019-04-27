@@ -103,12 +103,12 @@ CHANNEL_LAYERS = {
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-database_host = os.environ.get('DATABASE_HOST', 'localhost')
-database_username = os.environ.get('DATABASE_USERNAME', 'root')
-database_name = os.environ.get('DATABASE_NAME', 'messenger_clone')
-database_port = os.environ.get('DATABASE_PORT', '3306')
-database_password = os.environ.get('DATABASE_PASSWORD', '')
-database_engine = os.environ.get('DATABASE_ENGINE')
+database_host = os.environ.get('DATABASE_HOST', '127.0.0.1')
+database_username = os.environ.get('DATABASE_USERNAME', 'chat')
+database_name = os.environ.get('DATABASE_NAME', 'chat')
+database_port = os.environ.get('DATABASE_PORT', '3340')
+database_password = os.environ.get('DATABASE_PASSWORD', '!23qweASD')
+database_engine = os.environ.get('DATABASE_ENGINE', 'django.db.backends.mysql')
 
 
 DATABASES = {

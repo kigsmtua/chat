@@ -1,6 +1,6 @@
 asgi-redis==1.4.3
 asgiref==1.1.2
-attrs==17.2.0
+attrs>=17.4.0
 autobahn==17.9.3
 Automat==0.6.0
 channels==1.1.8
