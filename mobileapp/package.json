@@ -1,7 +1,7 @@
 {
   "name": "mobileapp",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "John Kiragu",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -31,9 +31,8 @@
     "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "2.0.2",
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "description": "A failed attempt at building facebook messenger"
 }
