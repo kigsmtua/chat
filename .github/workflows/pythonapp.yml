@@ -18,6 +18,3 @@ jobs:
         cd backend
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Test with pytest
-      run: |
-        python manage.py test
