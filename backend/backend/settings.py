@@ -87,7 +87,7 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
-ASGI_APPLICATION = 'backend.wsgi.application'
+ASGI_APPLICATION = 'backend.routing.application'
 redis_host = os.environ.get('REDIS_HOST', 'localhost')
 
 # asgiredis

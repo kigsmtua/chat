@@ -19,9 +19,11 @@ from django.contrib.auth import login, logout
 from rest_framework_jwt.views import obtain_jwt_token
 
 from chat.views import index
+from chat.views import health_check
 
 urlpatterns = [
     url(r'^$', index),
+    url(r'^healthcheck', health_check),
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^admin/', admin.site.urls),
