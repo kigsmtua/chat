@@ -35,4 +35,4 @@ def index(request):
     })
 
 def health_check(request):
-    return HttpResponse("Ok()..", content_type="application/json")
+    return HttpResponse("Application ok()..", content_type="application/json")
