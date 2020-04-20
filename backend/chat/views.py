@@ -1,5 +1,6 @@
 """Chat application views."""
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from chat.models import Messages
@@ -32,3 +33,6 @@ def index(request):
     return render(request, "index.html", {
         "rooms": rooms,
     })
+
+def health_check(request):
+    return HttpResponse("Application ok()..", content_type="application/json")
