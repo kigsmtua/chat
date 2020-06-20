@@ -21,7 +21,7 @@ class MessageCreateView(CreateAPIView):
         return {'request': self.request}
 
 
-@login_required
+ #@login_required
 def index(request):
     """
     Root page view.
@@ -29,9 +29,13 @@ def index(request):
     This is essentially a single-page app, if you ignore the
     login and admin parts.
     """
-    rooms = {}
+    people = {}
+
+    # Use ehre
+    # Echo back user
+    # Echos back
     return render(request, "index.html", {
-        "rooms": rooms,
+        "rooms": people,
     })
 
 def health_check(request):
