@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from chat.models import Messages
+from profiles.models import Profile
+from chat.models import Thread
 from chat.serializers import MessageCreateSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
@@ -15,7 +17,6 @@ class MessageCreateView(CreateAPIView):
     serializer_class = MessageCreateSerializer
     queryset = Messages.objects.all()
     permission_classes = [AllowAny]
-
     def get_serializer_context(self):
         """Pass request object to serializer."""
         return {'request': self.request}
@@ -29,14 +30,7 @@ def index(request):
     This is essentially a single-page app, if you ignore the
     login and admin parts.
     """
-    people = {}
-
-    # Use ehre
-    # Echo back user
-    # Echos back
+    threads = Thread.objects.all().order_by('-createdAt')
     return render(request, "index.html", {
-        "rooms": people,
+        "threads": threads ,
     })
-
-def health_check(request):
-    return HttpResponse("Application ok()..", content_type="application/json")

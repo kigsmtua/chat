@@ -21,7 +21,8 @@ class Thread(models.Model):
         msg = {
             'thread_id': str(self.id),
             'thread_name': str(self.id),
-            'message': message}
+            'message': message
+        }
 
         self.name.send(
             {"message": json.dumps(msg)}
