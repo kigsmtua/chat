@@ -1,7 +1,7 @@
 asgi-redis==1.4.3
 asgiref==3.2.7
 attrs==19.3.0
-autobahn==17.9.3
+autobahn==20.12.3
 Automat==0.6.0
 channels==2.4.0
 constantly==15.1.0
