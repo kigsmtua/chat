@@ -6,7 +6,7 @@ Automat==0.6.0
 channels==2.4.0
 constantly==15.1.0
 daphne==2.5.0
-Django==3.1.8
+Django==3.1.12
 django-cors-headers==3.2.1
 djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
