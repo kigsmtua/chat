@@ -3,7 +3,6 @@
 # Chat
 Live video,chat,audio messaging system borrowing inspirations from facebook messenger
 
-Demo application found at https://live-chat-clone.herokuapp.com
 
 # project Technologies
 1. Django 1.11.3
