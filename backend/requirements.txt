@@ -18,7 +18,7 @@ olefile==0.44
 Pillow==8.1.1
 psycopg2==2.7.1
 PyHamcrest==2.0.2
-PyJWT==1.5.3
+PyJWT==2.4.0
 pytz==2017.2
 redis==2.10.6
 six==1.11.0
